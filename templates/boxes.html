@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Flask Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="../static/style.css" />
+</head>
+<body>  
+  <h1>Welcome!</h1>
+  <h3>Number = {{num}}</h3>
+  <h3>Color = {{color}}</h3>
+</body>
+  {% if not num %}
+      {% for i in range(0,3,1) %}
+          <div class= "box"></div>
+      {% endfor %}    
+  {% elif num and color %}
+      {% for i in range (0, num, 1)%}
+          <div class="box" style="width: 150px;height:150px; background-color:{{color}};display: inline-block"> </div>
+      {% endfor %}    
+  {% else %}
+      {% for i in range(0,num,1) %}
+          <div class= "box"></div>
+      {% endfor %}    
+  {% endif %}        
+<html>
